@@ -1,0 +1,47 @@
+
+---
+
+### `CITATION.cff`
+
+```yaml
+cff-version: 1.2.0
+title: ellipcenters-rs
+message: If you use this software, please cite it and the original ME paper.
+type: software
+version: 0.1.0
+date-released: 2025-09-23
+authors:
+  - given-names: Diogo
+    family-names: Ribeiro
+    orcid: "https://orcid.org/0009-0001-2022-7072"
+repository-code: "https://github.com/diogoribeiro7/ellipcenters-rs"
+license: "Apache-2.0 OR MIT"
+keywords:
+  - optimization
+  - first-order methods
+  - ellipcenters
+  - rust
+preferred-citation:
+  type: software
+  authors:
+    - given-names: Diogo
+      family-names: Ribeiro
+  title: ellipcenters-rs
+  version: 0.1.0
+  date-released: 2025-09-23
+references:
+  - type: article
+    title: "Introducing the Method of Ellipcenters, a new first order technique for unconstrained optimization"
+    authors:
+      - given-names: Roger
+        family-names: Behling
+      - given-names: Ramyro Corrêa
+        family-names: Aquines
+      - given-names: Eduarda Ferreira
+        family-names: Zanatta
+      - given-names: Vincent
+        family-names: Guigues
+    journal: arXiv
+    year: 2025
+    notes: arXiv:2509.15471
+
