@@ -1,0 +1,19 @@
+[package]
+name = "ellipcenters"
+version = "0.1.0"
+edition = "2021"
+description = "Method of Ellipcenters (ME) for unconstrained optimization"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/diogoribeiro7/ellipcenters"
+readme = "README.md"
+keywords = ["optimization", "gradient", "nlopt", "first-order", "ellipcenters"]
+categories = ["science", "algorithms", "mathematics"]
+
+[dependencies]
+ndarray = { version = "0.15", features = ["blas"] }
+ndarray-linalg = { version = "0.16", default-features = false, features = ["openblas-system"] }
+thiserror = "1.0"
+
+[dev-dependencies]
+approx = "0.5"
+rand = "0.8"
