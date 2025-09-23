@@ -1,16 +1,16 @@
-cff-version: 1.2.0
-title: ellipcenters-rs
-message: If you use this software, please cite it and the original Method of Ellipcenters paper.
+cff-version: "1.2.0"
+message: "If you use this software, please cite this package and the original Method of Ellipcenters paper."
+title: "ellipcenters-rs"
 type: software
-version: 0.1.0
-date-released: 2025-09-23
+version: "0.1.0"
+date-released: "2025-09-23"
 authors:
 
-* given-names: Diogo
-  family-names: Ribeiro
+* given-names: "Diogo"
+  family-names: "Ribeiro"
   orcid: "[https://orcid.org/0009-0001-2022-7072](https://orcid.org/0009-0001-2022-7072)"
   repository-code: "[https://github.com/diogoribeiro7/ellipcenters-rs](https://github.com/diogoribeiro7/ellipcenters-rs)"
-  license: "Apache-2.0 OR MIT"
+  license: "Apache-2.0"
   keywords:
 * optimization
 * first-order methods
@@ -18,26 +18,27 @@ authors:
 * rust
   preferred-citation:
   type: software
-  title: ellipcenters-rs
-  version: 0.1.0
-  date-released: 2025-09-23
+  title: "ellipcenters-rs"
+  version: "0.1.0"
+  date-released: "2025-09-23"
   authors:
 
-  * given-names: Diogo
-    family-names: Ribeiro
+  * given-names: "Diogo"
+    family-names: "Ribeiro"
     references:
 * type: article
   title: "Introducing the Method of Ellipcenters, a new first order technique for unconstrained optimization"
   authors:
 
-  * given-names: Roger
-    family-names: Behling
-  * given-names: Ramyro Corrêa
-    family-names: Aquines
-  * given-names: Eduarda Ferreira
-    family-names: Zanatta
-  * given-names: Vincent
-    family-names: Guigues
+  * given-names: "Roger"
+    family-names: "Behling"
+  * given-names: "Ramyro Corrêa"
+    family-names: "Aquines"
+  * given-names: "Eduarda Ferreira"
+    family-names: "Zanatta"
+  * given-names: "Vincent"
+    family-names: "Guigues"
     year: 2025
-    notes: arXiv:2509.15471
+    url: "[https://arxiv.org/abs/2509.15471](https://arxiv.org/abs/2509.15471)"
+
 
