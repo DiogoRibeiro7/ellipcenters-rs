@@ -1,0 +1,89 @@
+# .github/dependabot.yml
+version: 2
+
+updates:
+  # ────────────────────────────────────────────────────────────────────────────
+  # 1) Rust (Cargo) dependencies for the root crate or workspace
+  # ────────────────────────────────────────────────────────────────────────────
+  - package-ecosystem: cargo
+    directory: "/"                  # path containing Cargo.toml (workspace root)
+    schedule:
+      interval: weekly              # daily | weekly | monthly
+      day: monday                   # for weekly/monthly schedules
+      time: "08:00"                 # UTC
+    open-pull-requests-limit: 10
+    versioning-strategy: increase-if-necessary  # keep semver sensible
+    rebase-strategy: auto           # let Dependabot rebase when needed
+
+    # Group similar updates to reduce PR noise (works for Cargo)
+    groups:
+      rust-minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      rust-build-only:
+        patterns:
+          - "cc"                    # example: group build helpers together
+          - "bindgen*"
+          - "cmake*"
+        exclude-patterns:
+          - "openssl*"
+
+    # Add housekeeping metadata to PRs
+    commit-message:
+      prefix: "deps(cargo)"
+      include: scope
+
+    labels:
+      - "dependencies"
+      - "rust"
+
+    # Optional reviewers/assignees (set to your GitHub handle(s) or remove)
+    reviewers:
+      - "diogoribeiro7"
+    assignees:
+      - "diogoribeiro7"
+
+    # Ignore pre-releases or specific packages if needed
+    ignore:
+      - dependency-name: "*"
+        versions: ["<0"]            # no-op pattern; keep as example anchor
+      # - dependency-name: "tokio"
+      #   update-types: ["version-update:semver-major"]
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 2) GitHub Actions used by this repo
+  # ────────────────────────────────────────────────────────────────────────────
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+      day: monday
+      time: "08:15"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(actions)"
+      include: scope
+    labels:
+      - "dependencies"
+      - "github-actions"
+    reviewers:
+      - "diogoribeiro7"
+    # If you prefer to pin SHAs in workflow 'uses:' entries,
+    # Dependabot can bump them automatically when configured this way.
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 3) (Optional) Additional crates in a monorepo
+  # Duplicate the Cargo block per crate path that has its own Cargo.toml.
+  # Dependabot does not support globs; list each directory explicitly.
+  # ────────────────────────────────────────────────────────────────────────────
+  # - package-ecosystem: cargo
+  #   directory: "/crates/my-lib"
+  #   schedule:
+  #     interval: weekly
+  #     day: monday
+  #     time: "08:00"
+  #   open-pull-requests-limit: 5
+  #   labels: ["dependencies", "rust", "my-lib"]
+  
